@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ASUS/Downloads/SMSML_Faris/membangun%20model/mlruns/196632976247069497/c03d9be3663c4b18809d38a9a6e76d7c/artifacts
+end_time: 1766392487719
+entry_point_name: ''
+experiment_id: '196632976247069497'
+lifecycle_stage: active
+run_id: c03d9be3663c4b18809d38a9a6e76d7c
+run_name: Run-12_Solver-newton-cg
+run_uuid: c03d9be3663c4b18809d38a9a6e76d7c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766392478930
+status: 3
+tags: []
+user_id: ASUS

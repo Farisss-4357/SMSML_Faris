@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ASUS/Downloads/SMSML_Faris/membangun%20model/mlruns/196632976247069497/0f48579d02874224b7d7328c8d93b1d4/artifacts
+end_time: 1766392372605
+entry_point_name: ''
+experiment_id: '196632976247069497'
+lifecycle_stage: active
+run_id: 0f48579d02874224b7d7328c8d93b1d4
+run_name: Run-1_Solver-liblinear
+run_uuid: 0f48579d02874224b7d7328c8d93b1d4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766392348969
+status: 3
+tags: []
+user_id: ASUS

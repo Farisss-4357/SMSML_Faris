@@ -1,0 +1,10 @@
+digest: 1544e22c
+name: dataset
+profile: '{"num_rows": 30, "num_elements": 120}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "sepal_length", "required":
+  true}, {"type": "double", "name": "sepal_width", "required": true}, {"type": "double",
+  "name": "petal_length", "required": true}, {"type": "double", "name": "petal_width",
+  "required": true}]}'
+source: '{"tags": {"mlflow.user": "ASUS", "mlflow.source.name": "c:/Users/ASUS/Downloads/SMSML_Faris/membangun
+  model/modeling.py", "mlflow.source.type": "LOCAL"}}'
+source_type: code

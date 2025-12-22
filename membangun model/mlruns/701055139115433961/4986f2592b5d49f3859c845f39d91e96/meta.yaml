@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ASUS/Downloads/SMSML_Faris/membangun%20model/mlruns/701055139115433961/4986f2592b5d49f3859c845f39d91e96/artifacts
+end_time: 1766369241966
+entry_point_name: ''
+experiment_id: '701055139115433961'
+lifecycle_stage: active
+run_id: 4986f2592b5d49f3859c845f39d91e96
+run_name: Logistic_Regression_Basic_Split
+run_uuid: 4986f2592b5d49f3859c845f39d91e96
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766369211985
+status: 3
+tags: []
+user_id: ASUS
