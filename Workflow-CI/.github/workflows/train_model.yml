@@ -1,0 +1,46 @@
+name: Continuous Integration - Model Training
+
+# Tentukan pemicu (trigger): Model akan dilatih ulang setiap kali ada perubahan
+# yang didorong (push) ke branch 'main'.
+on:
+  push:
+    branches:
+      - main 
+
+# Definisikan pekerjaan (job)
+jobs:
+  train_model:
+    # Tentukan sistem operasi (runner) yang akan menjalankan tugas
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Checkout Code
+      # Mengambil kode dari repositori GitHub
+      uses: actions/checkout@v4
+
+    - name: 2. Setup Conda Environment
+      # Menginstal dan menyiapkan Conda/Miniconda pada runner GitHub
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        auto-update-conda: true
+        python-version: 3.12.7 # PASTIKAN SAMA dengan di conda.yaml
+        activate-environment: ci_env # Nama environment dari conda.yaml
+        
+    - name: 3. Install Dependencies
+      shell: bash
+      # Perintah untuk membuat dan mengaktifkan environment berdasarkan conda.yaml
+      run: |
+        # Inisialisasi Conda
+        conda init bash
+        source ~/.bashrc
+        # Buat environment dari file YAML
+        conda env create -f MLProject/conda.yaml
+        
+    - name: 4. Run MLflow Project (Model Retraining)
+      shell: bash
+      # Jalankan MLflow Project yang sudah kita definisikan
+      run: |
+        # Aktifkan environment yang sudah dibuat
+        conda activate ci_env
+        # Jalankan MLflow Project. Titik 'MLProject/' mengacu pada folder yang berisi file MLProject
+        mlflow run MLProject/ -e main
