@@ -1,60 +1,75 @@
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-import mlflow
-import mlflow.sklearn
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 
-mlflow.sklearn.autolog() 
+# Fungsi untuk melakukan preprocessing data secara otomatis
+def preprocess_data(file_path, output_path, train_output_path, test_output_path):
+    # 1. Memuat dataset
+    df = pd.read_csv(file_path)
+    print(f"Dataset dimuat dari {file_path}")
 
-# Ganti dengan path ke folder dataset Anda
-DATASET_PATH = "namadataset_preprocessing/" 
-TRAIN_FILE = DATASET_PATH + "train_data.csv"
-TEST_FILE = DATASET_PATH + "test_data.csv"
-TARGET_COLUMN = 'species' # Kolom target berdasarkan data Iris Anda
+    # 2. Periksa nilai unik di kolom 'species'
+    print("Unik values di kolom 'species' sebelum pembersihan:")
+    print(df['species'].unique())
 
-def load_data():
-    """Memuat data training dan testing yang sudah dipisahkan"""
-    try:
-        train_df = pd.read_csv(TRAIN_FILE)
-        X_train = train_df.drop(TARGET_COLUMN, axis=1)
-        y_train = train_df[TARGET_COLUMN]
-        
-        test_df = pd.read_csv(TEST_FILE)
-        X_test = test_df.drop(TARGET_COLUMN, axis=1)
-        y_test = test_df[TARGET_COLUMN]
-        
-        print("Data training dan testing berhasil dimuat.")
-        return X_train, X_test, y_train, y_test
+    # 3. Mengatasi missing values
+    # PERBAIKAN: Tambahkan numeric_only=True agar tidak error saat bertemu kolom teks
+    df.fillna(df.mean(numeric_only=True), inplace=True) 
+    print("Missing values pada kolom numerik telah diisi dengan rata-rata")
+
+    # 4. Bersihkan kolom 'species' dari spasi ekstra
+    df['species'] = df['species'].astype(str).str.strip().replace(r'\s+', ' ', regex=True)
     
-    except FileNotFoundError as e:
-        print(f"ERROR: File dataset tidak ditemukan. Pastikan data berada di path yang benar: {e}")
-        return None, None, None, None
+    # 5. Menampilkan nilai unik setelah pembersihan
+    print("Unik values di kolom 'species' setelah pembersihan:")
+    print(df['species'].unique())
 
-def train_model():
-    X_train, X_test, y_train, y_test = load_data()
+    # 6. Encoding variabel kategorikal 'species' menjadi numerik
+    # Menggunakan map sesuai kode Anda
+    mapping = {'setosa': 0, 'versicolor': 1, 'virginica': 2}
+    df['species'] = df['species'].map(mapping)
     
-    if X_train is None:
-        return
+    # Tambahan: Cek jika ada mapping yang gagal (NaN) karena typo di dataset
+    if df['species'].isnull().any():
+        print("Peringatan: Ada nilai di kolom species yang tidak terpetakan!")
+        # Mengisi nilai null hasil mapping yang gagal dengan nilai default atau hapus
+        df.dropna(subset=['species'], inplace=True)
 
-    # --- Memulai MLflow Run ---
-    with mlflow.start_run():
-        print("Memulai pelatihan model (Logistic Regression)...")
-        
-        # Inisialisasi Model
-        model = LogisticRegression(
-            solver='lbfgs', 
-            multi_class='ovr', 
-            max_iter=1000, 
-            random_state=42
-        )
-        
-        # Latih Model
-        model.fit(X_train, y_train)
+    print("Kolom 'species' telah diencoding menjadi numerik")
 
-        # Log parameter tambahan
-        mlflow.log_param("data_source", "iris_processed_files")
-        
-        print("Pelatihan selesai. Metrik dan Model telah dicatat oleh MLflow Autolog.")
+    # 7. Standarisasi fitur numerik menggunakan StandardScaler
+    scaler = StandardScaler()
+    kolom_fitur = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+    df[kolom_fitur] = scaler.fit_transform(df[kolom_fitur])
+    print("Fitur numerik telah distandarisasi")
 
+    # 8. Menyimpan data yang sudah diproses ke file CSV
+    df.to_csv(output_path, index=False)
+    print(f"Data yang sudah diproses disimpan di {output_path}")
+
+    # 9. Pisahkan fitur dan target
+    X = df.drop('species', axis=1)
+    y = df['species']
+
+    # 10. Bagi data menjadi data latih dan data uji
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # 11. Simpan data latih
+    train_data = pd.concat([X_train, y_train], axis=1)
+    train_data.to_csv(train_output_path, index=False)
+    print(f"Data latih disimpan di {train_output_path}")
+
+    # 12. Simpan data uji
+    test_data = pd.concat([X_test, y_test], axis=1)
+    test_data.to_csv(test_output_file, index=False)
+    print(f"Data uji disimpan di {test_output_file}")
+
+    return df
 
 if __name__ == "__main__":
-    train_model()
+    input_file = "../namadataset_raw/iris.csv"
+    output_file = "iris_preprocessing.csv"
+    train_output_file = "train_data.csv"
+    test_output_file = "test_data.csv"
+
+    preprocess_data(input_file, output_file, train_output_file, test_output_file)
