@@ -1,0 +1,27 @@
+# my global config
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+
+rule_files:
+
+scrape_configs:
+  # =====================
+  # PROMETHEUS ITSELF
+  # =====================
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # =====================
+  # ML INFERENCE SERVER
+  # =====================
+  - job_name: "ml_inference"
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["localhost:8000"]
