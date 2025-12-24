@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ASUS/Downloads/SMSML_Faris/mlruns/289172443716206084/1f484fb49dee411f94c2cb2e91c0efbf/artifacts
+end_time: 1766545185026
+entry_point_name: ''
+experiment_id: '289172443716206084'
+lifecycle_stage: active
+run_id: 1f484fb49dee411f94c2cb2e91c0efbf
+run_name: LogisticRegression_Churn
+run_uuid: 1f484fb49dee411f94c2cb2e91c0efbf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766545138101
+status: 3
+tags: []
+user_id: ASUS

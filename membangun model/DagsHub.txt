@@ -1,5 +1,3 @@
 Tautan Repositori MLOps DagsHub (Bukti Kriteria Advanced):
 
-URL: https://dagshub.com/Farisss-4357/SMSML_Faris_MLOps
-
-Verifikasi: Semua run MLflow (C=0.1, C=1.0, C=10.0) dan artefak tambahan (Confusion Matrix & Feature Importance) dapat dilihat di tab Experiments.
+URL: https://dagshub.com/Farisss-4357/telecom-churn-mlflow

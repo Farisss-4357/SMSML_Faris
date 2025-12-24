@@ -1,0 +1,15 @@
+digest: 52b3ed9d
+name: dataset
+profile: '{"num_rows": 2666, "num_elements": 26660}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "AccountWeeks", "required":
+  true}, {"type": "double", "name": "ContractRenewal", "required": true}, {"type":
+  "double", "name": "DataPlan", "required": true}, {"type": "double", "name": "DataUsage",
+  "required": true}, {"type": "double", "name": "CustServCalls", "required": true},
+  {"type": "double", "name": "DayMins", "required": true}, {"type": "double", "name":
+  "DayCalls", "required": true}, {"type": "double", "name": "MonthlyCharge", "required":
+  true}, {"type": "double", "name": "OverageFee", "required": true}, {"type": "double",
+  "name": "RoamMins", "required": true}]}'
+source: '{"tags": {"mlflow.user": "ASUS", "mlflow.source.name": "c:/Users/ASUS/Downloads/SMSML_Faris/membangun
+  model/modelling.py", "mlflow.source.type": "LOCAL", "mlflow.source.git.commit":
+  "f7eacbe99b92affe2386b5fc1a572d0358ccf4e9"}}'
+source_type: code

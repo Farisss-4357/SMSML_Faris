@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ASUS/Downloads/SMSML_Faris/mlruns/234389751546000276/fd71f3cea8d24de7b0075a52b1eb65cd/artifacts
+end_time: 1766545490526
+entry_point_name: ''
+experiment_id: '234389751546000276'
+lifecycle_stage: active
+run_id: fd71f3cea8d24de7b0075a52b1eb65cd
+run_name: Run-4-lbfgs-l2
+run_uuid: fd71f3cea8d24de7b0075a52b1eb65cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766545475374
+status: 3
+tags: []
+user_id: ASUS

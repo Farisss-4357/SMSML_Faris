@@ -9,10 +9,10 @@ from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_
 # MLFLOW DAGSHUB CONFIG
 # =========================
 mlflow.set_tracking_uri(
-    "https://dagshub.com/Farisss-4357/SMSML_Faris_MLOps.mlflow"
+    "https://dagshub.com/Farisss-4357/telecom-churn-mlflow.mlflow"
 )
 
-MODEL_URI = "runs:/d1225e7863f34591a48ebe53b8938ac9/model"
+MODEL_URI = "runs:/98342c0831f945a6a7e9015626ad9d9e/model"
 
 print("Loading model from MLflow...")
 model = mlflow.pyfunc.load_model(MODEL_URI)
