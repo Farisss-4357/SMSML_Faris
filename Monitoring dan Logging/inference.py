@@ -12,7 +12,7 @@ mlflow.set_tracking_uri(
     "https://dagshub.com/Farisss-4357/telecom-churn-mlflow.mlflow"
 )
 
-MODEL_URI = "runs:/98342c0831f945a6a7e9015626ad9d9e/model"
+MODEL_URI = "runs:/6722e157f8b545d690c4fdc650e06958/model"
 
 print("Loading model from MLflow...")
 model = mlflow.pyfunc.load_model(MODEL_URI)

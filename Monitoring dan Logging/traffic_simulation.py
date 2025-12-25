@@ -13,13 +13,20 @@ def send_request():
     data = {
         "instances": [
             [
-                random.uniform(-3, 3),
-                random.uniform(-4, 4),
-                random.uniform(-4, 4),
-                random.uniform(-3, 3)
+                random.uniform(-3, 3),  # feature 1
+                random.uniform(-4, 4),  # feature 2
+                random.uniform(-4, 4),  # feature 3
+                random.uniform(-3, 3),  # feature 4
+                random.uniform(-2, 2),  # feature 5
+                random.uniform(-1, 1),  # feature 6
+                random.uniform(-5, 5),  # feature 7
+                random.uniform(-6, 6),  # feature 8
+                random.uniform(-3, 3),  # feature 9
+                random.uniform(-4, 4),  # feature 10
             ]
         ]
     }
+
 
     try:
         response = requests.post(PREDICT_URL, json=data)

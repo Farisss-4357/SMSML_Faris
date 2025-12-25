@@ -24,8 +24,8 @@ dagshub.init(
     mlflow=True
 )
 
-mlflow.set_tracking_uri("https://dagshub.com/Farisss-4357/telecom-churn-mlflow.mlflow")
-mlflow.set_experiment("Telecom Churn - Kriteria 2 Advanced (DagsHub)")
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_experiment("Telecom Churn - Kriteria 2 Advanced")
 # =========================================================
 
 # Matikan autolog (WAJIB untuk Skilled & Advanced)

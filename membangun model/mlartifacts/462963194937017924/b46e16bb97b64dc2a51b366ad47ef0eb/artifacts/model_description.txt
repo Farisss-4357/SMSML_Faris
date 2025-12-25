@@ -1,0 +1,1 @@
+Model LogisticRegression dengan C=0.01, solver=liblinear, penalty=l1

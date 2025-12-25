@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/462963194937017924/f1060c07332d4c258f115bdf20f5ddbd/artifacts
+end_time: 1766588674603
+entry_point_name: ''
+experiment_id: '462963194937017924'
+lifecycle_stage: active
+run_id: f1060c07332d4c258f115bdf20f5ddbd
+run_name: Run-12-lbfgs-l2
+run_uuid: f1060c07332d4c258f115bdf20f5ddbd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766588557524
+status: 3
+tags: []
+user_id: Farisss-4357

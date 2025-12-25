@@ -1,3 +1,1 @@
-Tautan Repositori MLOps DagsHub (Bukti Kriteria Advanced):
-
-URL: https://dagshub.com/Farisss-4357/telecom-churn-mlflow
+https://dagshub.com/Farisss-4357/telecom-churn-mlflow.mlflow

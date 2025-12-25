@@ -1,0 +1,5 @@
+flask
+mlflow
+pandas
+scikit-learn
+prometheus-client

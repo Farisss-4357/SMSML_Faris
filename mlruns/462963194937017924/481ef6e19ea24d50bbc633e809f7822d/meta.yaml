@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/462963194937017924/481ef6e19ea24d50bbc633e809f7822d/artifacts
+end_time: 1766588486383
+entry_point_name: ''
+experiment_id: '462963194937017924'
+lifecycle_stage: active
+run_id: 481ef6e19ea24d50bbc633e809f7822d
+run_name: Run-7-SKIPPED
+run_uuid: 481ef6e19ea24d50bbc633e809f7822d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766588486077
+status: 3
+tags: []
+user_id: Farisss-4357

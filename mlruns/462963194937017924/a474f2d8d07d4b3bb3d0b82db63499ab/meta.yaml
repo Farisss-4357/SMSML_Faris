@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/462963194937017924/a474f2d8d07d4b3bb3d0b82db63499ab/artifacts
+end_time: 1766588529043
+entry_point_name: ''
+experiment_id: '462963194937017924'
+lifecycle_stage: active
+run_id: a474f2d8d07d4b3bb3d0b82db63499ab
+run_name: Run-9-liblinear-l1
+run_uuid: a474f2d8d07d4b3bb3d0b82db63499ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766588507487
+status: 3
+tags: []
+user_id: Farisss-4357

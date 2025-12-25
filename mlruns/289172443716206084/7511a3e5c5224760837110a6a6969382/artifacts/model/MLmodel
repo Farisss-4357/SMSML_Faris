@@ -1,0 +1,31 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 2.19.0
+model_size_bytes: 1021
+model_uuid: 93d75b0014d0448995e9c2a317f0c661
+run_id: 7511a3e5c5224760837110a6a6969382
+signature:
+  inputs: '[{"type": "double", "name": "AccountWeeks", "required": true}, {"type":
+    "double", "name": "ContractRenewal", "required": true}, {"type": "double", "name":
+    "DataPlan", "required": true}, {"type": "double", "name": "DataUsage", "required":
+    true}, {"type": "double", "name": "CustServCalls", "required": true}, {"type":
+    "double", "name": "DayMins", "required": true}, {"type": "double", "name": "DayCalls",
+    "required": true}, {"type": "double", "name": "MonthlyCharge", "required": true},
+    {"type": "double", "name": "OverageFee", "required": true}, {"type": "double",
+    "name": "RoamMins", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-12-24 14:54:59.910619'
